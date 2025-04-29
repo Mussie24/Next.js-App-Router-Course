@@ -1,0 +1,46 @@
+# Query: bcrypt
+# ContextLines: 1
+
+11 results - 3 files
+
+package.json:
+  11      "autoprefixer": "10.4.20",
+  12:     "bcrypt": "^5.1.1",
+  13      "clsx": "^2.1.1",
+
+  25    "devDependencies": {
+  26:     "@types/bcrypt": "^5.0.2",
+  27      "@types/node": "22.10.7",
+
+pnpm-lock.yaml:
+    19          version: 10.4.20(postcss@8.5.1)
+    20:       bcrypt:
+    21          specifier: ^5.1.1
+
+    56      devDependencies:
+    57:       '@types/bcrypt':
+    58          specifier: ^5.0.2
+
+   309  
+   310:   '@types/bcrypt@5.0.2':
+   311      resolution: {integrity: sha512-6atioO8Y75fNcbmj0G7UjI9lXN2pQ/IGJ2FWT4a/btd0Lk9lQalHLKhkgKVZ3r+spnmWUKfbMi1GEe9wyHQfNQ==}
+
+   377  
+   378:   bcrypt@5.1.1:
+   379      resolution: {integrity: sha512-AGBHOG5hPYZ5Xl9KXzU5iKq9516yEmvCKDg3ecP5kX2aB6UqTeXZxk2ELnDgDm6BQSMlLt9rDB4LoSMx0rYwww==}
+
+  1271  
+  1272:   '@types/bcrypt@5.0.2':
+  1273      dependencies:
+
+  1335  
+  1336:   bcrypt@5.1.1:
+  1337      dependencies:
+
+app/seed/route.ts:
+   1: import bcrypt from 'bcryptjs';
+   2  import postgres from 'postgres';
+
+  19      users.map(async (user) => {
+  20:       const hashedPassword = await bcrypt.hash(user.password, 10);
+  21        return sql`
